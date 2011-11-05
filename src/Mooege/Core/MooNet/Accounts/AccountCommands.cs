@@ -20,6 +20,7 @@ using System.Linq;
 using Mooege.Core.MooNet.Commands;
 using Mooege.Net.MooNet;
 using Mooege.Core.Common.Toons;
+using System.Collections.Generic;
 
 namespace Mooege.Core.MooNet.Accounts
 {
@@ -98,7 +99,7 @@ namespace Mooege.Core.MooNet.Accounts
                   return string.Format("No account with email '{0}' exists.", @params);
             
             //Delete all Toons
-            System.Collections.Generic.Dictionary<ulong,Toon> toons = ToonManager.GetToonsForAccount(account);
+            Dictionary<ulong,Toon> toons = ToonManager.GetToonsForAccount(account);
             foreach (Toon toon in toons.Values)
             {
                 ToonManager.DeleteToon(toon);
